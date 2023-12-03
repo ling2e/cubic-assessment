@@ -1,0 +1,13 @@
+RewriteEngine On
+
+ErrorDocument 404 /_NOTFOUND.php
+ErrorDocument 403 /_NOTFOUND.php
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} \.php$
+RewriteRule .* - [L]
+
+RewriteCond %{REQUEST_FILENAME} \.css$ [OR]
+RewriteCond %{REQUEST_FILENAME} \.js$
+RewriteRule .* - [R=404,L]
+
