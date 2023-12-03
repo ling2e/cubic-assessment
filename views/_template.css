@@ -1,5 +1,18 @@
 @import url("https://fonts.googleapis.com/css?family=Barlow+Condensed:300,400,500,600,700,800,900|Barlow:300,400,500,600,700,800,900&display=swap");
 
+* {
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    height: auto;
+    font-family: "Barlow", sans-serif;
+    background: #695681;
+}
+
 h1,
 h2,
 h3,
@@ -40,15 +53,10 @@ body:focus {
     outline: 0;
 }
 
-body {
-    margin: 0;
-    padding: 0;
-    height: auto;
-    font-family: "Barlow", sans-serif;
-    background: #695681;
-}
 
-button.btn {
+/* BUTTON */
+
+.btn {
     width: 100%;
     max-width: 200px;
     height: 40px;
@@ -65,13 +73,14 @@ button.btn {
     transition: all 0.3s ease;
 }
 
-button.btn:hover {
+.btn:hover {
     box-shadow: 0px 10px 10px -10px rgba(54, 24, 79, 0.5);
     /* transform: translateY(5px); */
     background: #fb8a8a;
     color: white;
 }
-button.btn:active {
+
+.btn:active {
     box-shadow: 0px 10px 10px -10px rgba(54, 24, 79, 0.5);
     /* transform: translateY(5px); */
     background: #fb8a8ac5;

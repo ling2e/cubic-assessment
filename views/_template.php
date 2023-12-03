@@ -1,3 +1,9 @@
+<?php
+// import Global Components
+include_once $_SERVER["DOCUMENT_ROOT"] . "/components/Button.php";
+
+if (!isset($title)) $title = "Number Collector";
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -8,6 +14,7 @@
         <?= include_once $_SERVER["DOCUMENT_ROOT"] . "/views/_template.css" ?>
     </style>
     <script src="https://cdn.tailwindcss.com"></script>
+    <title><?= $title ?></title>
 
     <?= function_exists("head") ? call_user_func("head") :  "" ?>
 

@@ -1,4 +1,5 @@
 RewriteEngine On
+RewriteRule ^views/ - [R=404,L]
 
 ErrorDocument 404 /_NOTFOUND.php
 ErrorDocument 403 /_NOTFOUND.php

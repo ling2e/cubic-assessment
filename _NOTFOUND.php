@@ -1,11 +1,11 @@
 <?php
+$title = "404 | Page Not Found";
 include_once $_SERVER['DOCUMENT_ROOT'] . "/views/_template.php";
 
 function head()
 { ?>
-    <title>Home Page</title>
     <style>
-        <?= include_once $_SERVER["DOCUMENT_ROOT"] . "/_NOTFOUND.css"?>
+        <?= include_once $_SERVER["DOCUMENT_ROOT"] . "/_NOTFOUND.css" ?>
     </style>
 <?php
 };
@@ -53,7 +53,10 @@ function content()
             <div class="text">
                 <article>
                     <p>Uh oh! Looks like you got lost. <br>Go back to the homepage if you dare!</p>
-                    <button class="btn">i dare!</button>
+                    <?= Button([
+                        "text" => "I dare!",
+                        "href" => "/"
+                    ]) ?>
                 </article>
             </div>
 
