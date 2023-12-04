@@ -18,7 +18,6 @@ function content()
 
             <div id="scene" class="scene" data-hover-only="false">
 
-
                 <div class="circle" data-depth="1.2"></div>
 
                 <div class="one" data-depth="0.9">
