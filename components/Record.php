@@ -50,6 +50,11 @@ function Record($digitNum = 5)
                 ele.innerHTML = result[i]
             })
         }
+        let collectedBox_reset = () => {
+            [...collectedItemsBox].forEach((ele, i) => {
+                ele.innerHTML = +0
+            })
+        }
     </script>
 <?php
 }

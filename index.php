@@ -83,25 +83,28 @@ function content()
             isBtnProgressing = true;
             // for site bar record box
             collectedBox_isCollecting();
+            // reset the record box
+            collectedBox_reset()
 
             /*
                 Timer to collect the last number on screen per second.
                 --------------------------------
             */
-            let aryResult = [+aryEleSpan[aryEleSpan.length - 1].innerHTML];
+            let _firstNum = +aryEleSpan[aryEleSpan.length - 1].innerHTML;
+            let aryResult = [_firstNum];
+            collectedBox_showNumber(_firstNum, aryResult.length - 1)
 
             // timer to get the last number show on screen.
             let timer = setInterval(() => {
                 let lastDigit = +aryEleSpan[aryEleSpan.length - 1].innerHTML;
 
                 aryResult.push(lastDigit)
+                // show the result into record bar;
+                collectedBox_showNumber(lastDigit, aryResult.length - 1)
                 if (aryResult.length >= initNumLength) {
                     clearInterval(timer);
 
-                    // show the result into record bar;
-                    collectedBox_showNumber(aryResult.join(""))
                     collectedBox_isCollecting();
-                    console.log((aryResult.join("")));
                     isBtnProgressing = false;
                 };
             }, 1000);
