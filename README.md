@@ -31,7 +31,7 @@ Frontend
     x display all records get from database
 
 Backend
-- [*] Database
+- [x] Database
     - Create the DATABASE
     - Create Table for records
 - [ ] Connect Database
