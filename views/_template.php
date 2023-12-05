@@ -1,6 +1,7 @@
 <?php
 // import Global Components
 include_once $_SERVER["DOCUMENT_ROOT"] . "/components/Button.php";
+include_once $_SERVER["DOCUMENT_ROOT"] . "/components/Navigation.php";
 
 if (!isset($title)) $title = "Number Collector";
 ?>
@@ -12,7 +13,6 @@ if (!isset($title)) $title = "Number Collector";
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
         <?= include_once $_SERVER["DOCUMENT_ROOT"] . "/views/_template.css" ?>
-
         /* tailwinds */
         /* tailwinds */
         /* tailwinds */
@@ -27,6 +27,7 @@ if (!isset($title)) $title = "Number Collector";
 
 <body>
     <div id="main">
+        <?= Navigation() ?>
         <?=
         /*
             Function with name "content" will be the page content to show.

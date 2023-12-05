@@ -10,7 +10,6 @@ function content()
     require_once $_SERVER["DOCUMENT_ROOT"] . "/components/RecordDetails.php";
 
 ?>
-    <nav></nav>
     <?= Record([
         "onClick" => "RecordDetails_Open()"
     ]) ?>

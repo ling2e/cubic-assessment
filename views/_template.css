@@ -93,3 +93,30 @@ body:focus {
     background: rgba(128, 128, 128, 0.766);
     color: #bcbcbc;
 }
+
+
+
+
+/* scroll bar */
+/* scroll bar */
+/* scroll bar */
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius:50px;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }

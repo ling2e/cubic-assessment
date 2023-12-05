@@ -2,7 +2,7 @@
 function RecordDetails()
 { ?>
     <div id="record-details" class="fixed w-screen h-screen backdrop-blur z-[999] grid place-items-center hidden" data-isOpen="false" data-recordDetails="">
-        <div id="recordDetails-box" class="bg-slate-100 rounded-md shadow-md min-w-[90vw] md:min-w-[500px] min-h-[30vh] md:min-h-[300px] p-4">
+        <div id="recordDetails-box" class="fixed bg-slate-100 rounded-md shadow-md min-w-[90vw] md:min-w-[500px] min-h-[30vh] md:min-h-[300px] p-4">
             <!-- header -->
             <!-- header -->
             <!-- header -->
