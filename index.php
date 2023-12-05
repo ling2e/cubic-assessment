@@ -1,12 +1,4 @@
 <?php
-/*  Todo:
-*   [*] Create the layout for show the random number.
-*   [*] Create the button to collect the number per second.
-*   [*] Create the function to generate the random number per second and let it show show on screen.
-*   [ ]
-*/
-
-
 $title = "Home | Number Collector";
 require_once $_SERVER["DOCUMENT_ROOT"] . "/views/_template.php";
 
@@ -107,7 +99,7 @@ function content()
 
                     collectBtn.disabled = isBtnProgressing;
                     collectBtn.innerHTML = "Collect";
-                    
+
                     // passing value to record Details models
                     RecordDetails_Set(aryResult.join(""), aryOriResult)
                 };
