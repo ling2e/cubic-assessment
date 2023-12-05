@@ -5,7 +5,7 @@ require_once $_SERVER["DOCUMENT_ROOT"] . "/components/Record.php";
 
 function content()
 { ?>
-    <section class="container mx-auto">
-
+    <section class="container mx-auto py-4 text-white">
+        
     </section>
 <?php }

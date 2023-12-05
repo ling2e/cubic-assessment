@@ -1,7 +1,9 @@
 > This is a my Assessment project. I need to build a simple number collector web application and store into Storage by using HTML , Javascript , CSS , PHP , MySQL.
 
 ----
-### Todo:
+- [Todo](#todo)
+----
+### Todo
 - [x] Display the random 5-digit number and refresh per second.
     - function generate number
     - display number
@@ -18,3 +20,4 @@
 - [x] Create the NOT FOUND Page
     - layout
     - bring user to NOT FOUND Page when user trying to access the page not found or the page no permission to access.
+----
