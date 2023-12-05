@@ -12,6 +12,11 @@ if (!isset($title)) $title = "Number Collector";
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
         <?= include_once $_SERVER["DOCUMENT_ROOT"] . "/views/_template.css" ?>
+
+        /* tailwinds */
+        /* tailwinds */
+        /* tailwinds */
+        <?= include_once $_SERVER["DOCUMENT_ROOT"] . "/views/_tailwinds.css" ?>
     </style>
     <script src="https://cdn.tailwindcss.com"></script>
     <title><?= $title ?></title>
