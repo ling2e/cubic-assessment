@@ -38,10 +38,10 @@ function content()
             <!-- Number Box -->
             <!-- Number Box -->
             <!-- Number Box -->
-            <div id="fdigit-number" class="text-gray-700 text-8xl font-bold flex flex-nowrap gap-1">
+            <div id="fdigit-number" class="text-gray-700 text-2xl md:text-8xl font-bold flex flex-nowrap gap-1">
 
                 <?php for ($i = 0; $i < 5; $i++) : ?>
-                    <span class="mx-1 w-[85px] text-center overflow-hidden p-4 shadow-md bg-white rounded-md block"><?= rand(0, 9) ?></span>
+                    <span class="mx-1 w-[40px] md:w-[85px] text-center overflow-hidden py-4 shadow-md bg-white rounded-md block"><?= rand(0, 9) ?></span>
                 <?php endfor; ?>
 
             </div>

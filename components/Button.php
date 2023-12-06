@@ -26,7 +26,7 @@ function Button($objDetails = [
     // Return Layout;
 ?>
     <?= $href ?>
-    <button <?= $attrId ?> class="btn mx-auto block" <?= $OnClick ?>><?= $objDetails["text"] ?></button>
+    <button <?= $attrId ?> class="btn mx-auto block md:w-100 w-min text-md whitespace-nowrap" <?= $OnClick ?>><?= $objDetails["text"] ?></button>
     <?php if ($href != "") echo "</a>" ?>
 <?php
 }

@@ -7,8 +7,8 @@ function RecordDetails()
             <!-- header -->
             <!-- header -->
             <div id="recordDetails-box_header" class="flex flex-nowrap justify-between items-end">
-                <h4 class="h-min capitalize text-2xl font-bold">Record Details</h4>
-                <button id="recordDetails-btnClose" class="text-white bg-red-500 hover:bg-red-600 active:opacity-80 p-2 px-4 font-semibold rounded">x</button>
+                <h4 class="h-min capitalize md:text-2xl text-lg font-bold">Record Details</h4>
+                <button id="recordDetails-btnClose" class="text-white bg-red-500 hover:bg-red-600 active:opacity-80 p-1 md:p-2 px-2 md:px-4 font-semibold rounded">x</button>
             </div>
             <hr class="mt-4 mb-2 w-full border-2">
             <!-- items -->
@@ -18,7 +18,7 @@ function RecordDetails()
                 <div class="recordDetails-itemBox w-full py-2 px-4 flex flex-nowrap justify-between items-center shadow hover:bg-slate-300 duration-300 rounded-sm">
                     <div id="recordDetails-items" class="w-10/12 flex flex-nowrap gap-2 justify-center text-white font-bold">
                         <?php for ($i = 1; $i <= 5; $i++) : ?>
-                            <span class=" overflow-hidden py-3 min-w-[40px] text-center text-xl <?= $i != 5 ? "shadow-inner opacity-80" : "shadow-sm" ?> bg-[#ae94ce] rounded-md block">0</span>
+                            <span class=" overflow-hidden py-2 md:py-3 w-[30px] md:w-[40px] text-center text-xl <?= $i != 5 ? "shadow-inner opacity-80" : "shadow-sm" ?> bg-[#ae94ce] rounded-md block">0</span>
                         <?php endfor; ?>
 
                     </div>
