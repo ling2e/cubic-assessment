@@ -53,11 +53,11 @@ function RecordDetails()
         let RecordDetails_Set = (
             result = "00000",
             aryOri = [
-                new Array(5).fill("0"),
-                new Array(5).fill("0"),
-                new Array(5).fill("0"),
-                new Array(5).fill("0"),
-                new Array(5).fill("0"),
+                "00000",
+                "00000",
+                "00000",
+                "00000",
+                "00000",
             ]) => document.getElementById("record-details").setAttribute("data-recordDetails", JSON.stringify({
             result,
             ori: aryOri
@@ -69,6 +69,8 @@ function RecordDetails()
             let objData = JSON.parse(document.getElementById("record-details").getAttribute("data-recordDetails"));
             let aryResult = objData.result.split("")
             let aryResultOri = objData.ori
+
+            console.log(JSON.stringify(aryResultOri))
 
             let displayBox = document.querySelectorAll(".recordDetails-itemBox");
 

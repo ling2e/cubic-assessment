@@ -114,7 +114,11 @@ body:focus {
   ::-webkit-scrollbar-thumb {
     background: #888;
     border-radius:50px;
-  }
+    -webkit-border-radius:50px;
+    -moz-border-radius:50px;
+    -ms-border-radius:50px;
+    -o-border-radius:50px;
+}
   
   /* Handle on hover */
   ::-webkit-scrollbar-thumb:hover {

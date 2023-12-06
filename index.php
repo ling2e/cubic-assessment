@@ -1,6 +1,25 @@
 <?php
+
+if (isset($_POST["action"]) && $_POST["action"] == "createRecord") {
+
+    // import conn
+    include_once $_SERVER["DOCUMENT_ROOT"] . "/conn.php";
+
+    $details = json_decode($_POST["recordDetails"]);
+    $res = (new RecordsControllers())->storeRecord([
+        "result" => $details->result,
+        "original" => $details->original,
+        "position" => $details->position
+    ]);
+    print_r($details);
+
+    header("HTTP/1.1 200 NO CONTENT");
+    die();
+}
+
 $title = "Home | Number Collector";
 require_once $_SERVER["DOCUMENT_ROOT"] . "/views/_template.php";
+
 
 
 function content()
@@ -94,13 +113,37 @@ function content()
                 if (aryResult.length >= initNumLength) {
                     clearInterval(timer);
                     Record_isCollecting();
-                    isBtnProgressing = false;
-
-                    collectBtn.disabled = isBtnProgressing;
-                    collectBtn.innerHTML = "Collect";
 
                     // passing value to record Details models
                     RecordDetails_Set(aryResult.join(""), aryOriResult)
+
+
+                    collectBtn.innerHTML = "Saving to database...";
+                    // Store to database
+                    console.log(`saving new Lucky Number to database`);
+
+                    let bodyContent = new FormData();
+                    bodyContent.append("action", "createRecord");
+                    bodyContent.append("recordDetails", JSON.stringify({
+                        "result": aryResult.join(""),
+                        "original": aryOriResult,
+                        "position": 5
+                    }));
+
+                    fetch('/', {
+                        headers: {
+                            "Accept": "*/*",
+                            "User-Agent": "Thunder Client (https://www.thunderclient.com)"
+                        },
+                        method: 'POST',
+                        body: bodyContent
+                    }).then(res => {
+                        console.log(res)
+                        isBtnProgressing = false;
+                        collectBtn.disabled = isBtnProgressing;
+                        collectBtn.innerHTML = "Collect";
+
+                    })
                 };
             }, 1000);
         }
