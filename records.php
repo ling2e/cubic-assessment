@@ -50,7 +50,7 @@ function content()
                 <?php
                 endforeach;
             elseif (gettype($records) == 'string') : ?>
-                <p class="text-2xl text-center my-4 font-semibold">Unable get data.</p>
+                <p class="text-2xl text-center my-4 font-semibold"><?= $records ?></p>
 
             <?php else : ?>
                 <p class="text-2xl text-center my-4 font-semibold">No Records Yet! Let collect some.</p>

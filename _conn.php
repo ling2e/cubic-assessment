@@ -32,7 +32,7 @@ class RecordsControllers extends Conn
                 return $data;
             }
         } catch (mysqli_sql_exception) {
-            return "Some thing went wrong.";
+            return "Fail to connect database...";
         }
     }
 
