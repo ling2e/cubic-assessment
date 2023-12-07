@@ -51,17 +51,20 @@ function RecordDetails()
 
         // function for set the lucky number Details.
         let RecordDetails_Set = (
-            result = "00000",
-            aryOri = [
-                "00000",
-                "00000",
-                "00000",
-                "00000",
-                "00000",
-            ]) => document.getElementById("record-details").setAttribute("data-recordDetails", JSON.stringify({
-            result,
-            ori: aryOri
-        }))
+                result = "00000",
+                aryOri = [
+                    "00000",
+                    "00000",
+                    "00000",
+                    "00000",
+                    "00000",
+                ]) => document.getElementById("record-details")
+            .setAttribute(
+                "data-recordDetails",
+                JSON.stringify({
+                    result,
+                    ori: aryOri
+                }))
         RecordDetails_Set();
 
         // function for show the lucky number Details.

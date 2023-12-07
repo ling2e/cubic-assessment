@@ -1,27 +1,17 @@
 RewriteEngine On
 
-RewriteRule ^views/ - [R=404,L]
-RewriteRule ^components/ - [R=404,L]
-RewriteRule ^Others/ - [R=404,L]
-RewriteRule conn - [R=404,L]
+ErrorDocument 404 /NOTFOUND.php
+ErrorDocument 403 /NOTFOUND.php
 
-ErrorDocument 404 /_NOTFOUND.php
-ErrorDocument 403 /_NOTFOUND.php
+RewriteRule ^components/ - [R=404,L]
+RewriteRule ^views/ - [R=404,L]
+RewriteRule ^Others/ - [R=404,L]
+
+RewriteRule ^_.*$ - [F,L]
+RewriteCond %{REQUEST_FILENAME} \.md$
+RewriteRule .* - [R=404,L]
 
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME}.php -f
 RewriteRule ^([^\.]+)/?$ $1.php [NC,L]
 
-
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_FILENAME} \.php$
-RewriteRule .* - [L]
-
-RewriteCond %{REQUEST_FILENAME} \.css$ [OR]
-RewriteCond %{REQUEST_FILENAME} \.js$ [OR]
-RewriteCond %{REQUEST_FILENAME} \.md$
-RewriteRule .* - [R=404,L]
-
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule ^([^/]+)/?$ controllers/$1 [L]

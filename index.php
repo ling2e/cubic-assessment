@@ -3,7 +3,7 @@
 if (isset($_POST["action"]) && $_POST["action"] == "createRecord") {
 
     // import conn
-    include_once $_SERVER["DOCUMENT_ROOT"] . "/conn.php";
+    include_once $_SERVER["DOCUMENT_ROOT"] . "/_conn.php";
 
     $details = json_decode($_POST["recordDetails"]);
     $res = (new RecordsControllers())->storeRecord([
@@ -11,9 +11,13 @@ if (isset($_POST["action"]) && $_POST["action"] == "createRecord") {
         "original" => $details->original,
         "position" => $details->position
     ]);
-    print_r($details);
+    if ($res == 1) {
+        header("HTTP/1.1 204 NO CONTENT");
+    } else {
 
-    header("HTTP/1.1 200 NO CONTENT");
+        header("HTTP/1.1 503 Service Unavailable");
+    }
+
     die();
 }
 
@@ -53,6 +57,8 @@ function content()
                 "text" => "Collect",
                 "onClick" => "collectBtn()",
             ]) ?>
+
+            <p id="notification-db" class="text-center mt-4 text-slate-300 invisible"></p>
         </div>
     </section>
 
@@ -117,8 +123,9 @@ function content()
                     // passing value to record Details models
                     RecordDetails_Set(aryResult.join(""), aryOriResult)
 
-
-                    collectBtn.innerHTML = "Saving to database...";
+                    let notifyDB = document.getElementById("notification-db");
+                    [...notifyDB.classList].includes("invisible") && notifyDB.classList.remove("invisible")
+                    notifyDB.innerHTML = "Saving to database...";
                     // Store to database
                     console.log(`saving new Lucky Number to database`);
 
@@ -139,10 +146,18 @@ function content()
                         body: bodyContent
                     }).then(res => {
                         console.log(res)
+                        if (res.status == 204) {
+                            isBtnProgressing = false;
+                            collectBtn.disabled = isBtnProgressing;
+                            collectBtn.innerHTML = "Collect";
+                            notifyDB.innerHTML = "Success save into Database!";
+                            return res
+                        }
+
                         isBtnProgressing = false;
                         collectBtn.disabled = isBtnProgressing;
                         collectBtn.innerHTML = "Collect";
-
+                        notifyDB.innerHTML = res.statusText;
                     })
                 };
             }, 1000);
@@ -165,7 +180,7 @@ function content()
                 let digitNum = `${Math.floor(Math.random() * (max - min + 1)) + min}`;
                 // split the number become array.
                 let aryNum = await digitNum.split("");
-                // check the Number if not enough 10 thousand and add the 0 in front it.
+                // check the Number length if not enough 5 digit then add the 0 in front it.
                 while (aryNum.length < initNumLength) aryNum.unshift("0");
 
                 // function display the result on screen.
